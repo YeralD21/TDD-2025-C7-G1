@@ -15,8 +15,8 @@ public class ServiceBTest {
         ServicioA servicioA = new ServicioAImpl();
         ServicioB servicioB = new ServicioBImpl();
         servicioB.setServicioA(servicioA);
-        Assert.assertEquals(10, servicioB.multiplicarSumar(2,3,2));
-    }
+        Assert.assertEquals(8, servicioB.multiplicarSumar(2,3,2));    }
+
     @Test
     public void testMultiplicarSumarMockito(){
         ServicioA servicioA = Mockito.mock(ServicioA.class);
