@@ -11,13 +11,15 @@ public class ServicioCImpl implements ServiceC {
 
         // Separar componentes
         String[] parts = temperature.split("°");
-        if (parts.length != 2) {
+
+        // Validar que haya exactamente 2 partes y que la primera no esté vacía
+        if (parts.length != 2 || parts[0].trim().isEmpty()) {
             return "Error: Formato incorrecto";
         }
 
         try {
-            double value = Double.parseDouble(parts[0]);
-            String unit = parts[1].toUpperCase();
+            double value = Double.parseDouble(parts[0].trim());
+            String unit = parts[1].trim().toUpperCase();
 
             // Validar unidad y convertir
             if (unit.equals("C")) {
